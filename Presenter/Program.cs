@@ -4,7 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddControllers().Services
-    .AddDatabase();
+    .AddDatabase()
+    .AddBusiness();
 
 var app = builder.Build();
 

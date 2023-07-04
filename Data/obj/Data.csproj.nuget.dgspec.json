@@ -1,0 +1,194 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/nerds-pc/RiderProjects/AnimalsAPI/Data/Data.csproj": {}
+  },
+  "projects": {
+    "/home/nerds-pc/RiderProjects/AnimalsAPI/Business/Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nerds-pc/RiderProjects/AnimalsAPI/Business/Business.csproj",
+        "projectName": "Business",
+        "projectPath": "/home/nerds-pc/RiderProjects/AnimalsAPI/Business/Business.csproj",
+        "packagesPath": "/home/nerds-pc/.nuget/packages/",
+        "outputPath": "/home/nerds-pc/RiderProjects/AnimalsAPI/Business/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/nerds-pc/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/nerds-pc/RiderProjects/AnimalsAPI/Domain/Domain.csproj": {
+                "projectPath": "/home/nerds-pc/RiderProjects/AnimalsAPI/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.108/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/nerds-pc/RiderProjects/AnimalsAPI/Data/Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nerds-pc/RiderProjects/AnimalsAPI/Data/Data.csproj",
+        "projectName": "Data",
+        "projectPath": "/home/nerds-pc/RiderProjects/AnimalsAPI/Data/Data.csproj",
+        "packagesPath": "/home/nerds-pc/.nuget/packages/",
+        "outputPath": "/home/nerds-pc/RiderProjects/AnimalsAPI/Data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/nerds-pc/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/nerds-pc/RiderProjects/AnimalsAPI/Business/Business.csproj": {
+                "projectPath": "/home/nerds-pc/RiderProjects/AnimalsAPI/Business/Business.csproj"
+              },
+              "/home/nerds-pc/RiderProjects/AnimalsAPI/Domain/Domain.csproj": {
+                "projectPath": "/home/nerds-pc/RiderProjects/AnimalsAPI/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.108/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/nerds-pc/RiderProjects/AnimalsAPI/Domain/Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nerds-pc/RiderProjects/AnimalsAPI/Domain/Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "/home/nerds-pc/RiderProjects/AnimalsAPI/Domain/Domain.csproj",
+        "packagesPath": "/home/nerds-pc/.nuget/packages/",
+        "outputPath": "/home/nerds-pc/RiderProjects/AnimalsAPI/Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/nerds-pc/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.108/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
