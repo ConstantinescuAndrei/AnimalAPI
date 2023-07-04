@@ -1,6 +1,6 @@
-using Business.Login;
+using Business.User.Login;
+using Business.User.Register;
 using Domain;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Presenter.Startup;
 
@@ -10,5 +10,7 @@ public static class EndpointsRegistration
         => app.UseEndpoints(endpoints =>
         {
             endpoints.MapGet("/", () => "Get");
+            endpoints.MapPost("/login", (User user, ILogin login) => login.Execute(user));
+            endpoints.MapPost("/register", (User user, IRegister register) => register.Execute(user));
         });
 }
