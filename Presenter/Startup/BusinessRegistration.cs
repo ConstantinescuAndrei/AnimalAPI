@@ -1,6 +1,10 @@
+using Business;
+using Business.Animal.Create;
+using Business.Animal.Repositories;
 using Business.User.Login;
 using Business.User.Register;
 using Business.User.Repositories;
+using Data.Animal;
 using Data.Register;
 
 namespace Presenter.Startup;
@@ -11,5 +15,7 @@ public static class BusinessRegistration
         .AddTransient<ILogin, Login>()
         .AddTransient<ILoginRepository, LoginRepository>()
         .AddTransient<IRegister, Register>()
-        .AddTransient<IRegisterRepository, RegisterRepository>();
+        .AddTransient<IRegisterRepository, RegisterRepository>()
+        .AddTransient<ICreate, Create>()
+        .AddTransient<ICreateRepository, CreateRepository>();
 }
