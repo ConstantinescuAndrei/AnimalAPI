@@ -6,12 +6,12 @@ namespace Business.User.Login;
 
 public class Login : ILogin
 {
-    private readonly ILoginRepository _loginRepository;
+    private readonly IUserRepository _userRepository;
     
-    public Login(ILoginRepository loginRepository)
+    public Login(IUserRepository userRepository)
     {
-        _loginRepository = loginRepository;
+        _userRepository = userRepository;
     }
     
-    public ApiResponse<MUser> Execute(MUser input) => _loginRepository.Login(input);
+    public ApiResponse<MUser> Execute(MUser input) => _userRepository.Login(input);
 }
