@@ -3,7 +3,11 @@ using Domain;
 
 namespace Business.Animal.Repositories;
 
-public interface ICreateRepository
+public interface IAnimalRepository
 {
     public ApiResponse<MAnimal> Create(MAnimal animal);
+
+    public ApiResponse<List<MAnimal>> GetAll();
+
+    public ApiResponse<List<MAnimal>> GetById(Guid id);
 }

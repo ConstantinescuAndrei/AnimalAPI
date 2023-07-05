@@ -1,5 +1,6 @@
 using Business;
 using Business.Animal.Create;
+using Business.Animal.Fetch;
 using Business.Animal.Repositories;
 using Business.User.Login;
 using Business.User.Register;
@@ -17,5 +18,7 @@ public static class BusinessRegistration
         .AddTransient<IRegister, Register>()
         .AddTransient<IRegisterRepository, RegisterRepository>()
         .AddTransient<ICreate, Create>()
-        .AddTransient<ICreateRepository, CreateRepository>();
+        .AddTransient<IAnimalRepository, AnimalRepository>()
+        .AddTransient<IGetAll, GetAll>()
+        .AddTransient<IGetById, GetById>();
 }

@@ -6,9 +6,9 @@ namespace Business.Animal.Create;
 
 public class Create : ICreate
 {
-    private readonly ICreateRepository _create;
+    private readonly IAnimalRepository _create;
 
-    public Create(ICreateRepository create) => _create = create;
+    public Create(IAnimalRepository create) => _create = create;
 
     public ApiResponse<MAnimal> Execute(MAnimal input) => _create.Create(input);
 }

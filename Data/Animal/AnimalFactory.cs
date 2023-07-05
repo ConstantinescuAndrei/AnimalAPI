@@ -22,4 +22,16 @@ public static class AnimalFactory
       ImageUrl = animal.ImageUrl,
       UserId = animal.UserId
    };
+
+   public static List<MAnimal> MakeModelList(List<EAnimal> animals)
+   {
+      List<MAnimal> result = new List<MAnimal>();
+
+      foreach (EAnimal animal in animals)
+      {
+         result.Add(MakeModel(animal));
+      }
+
+      return result;
+   }
 }
