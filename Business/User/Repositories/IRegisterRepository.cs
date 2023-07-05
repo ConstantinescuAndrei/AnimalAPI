@@ -5,5 +5,5 @@ namespace Business.User.Repositories;
 
 public interface IRegisterRepository
 {
-   public ApiResponse<Domain.User> Register(Domain.User user);
+   public ApiResponse<MUser> Register(MUser MUser);
 }

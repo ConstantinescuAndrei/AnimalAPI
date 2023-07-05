@@ -1,8 +1,9 @@
 using Business.ApiResponse;
+using Domain;
 
 namespace Business.User.Repositories;
 
 public interface ILoginRepository
 {
-    public ApiResponse<Domain.User> Login(Domain.User user);
+    public ApiResponse<MUser> Login(MUser MUser);
 }

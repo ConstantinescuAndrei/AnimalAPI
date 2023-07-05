@@ -1,5 +1,6 @@
 using Business.ApiResponse;
 using Business.User.Repositories;
+using Domain;
 
 namespace Business.User.Login;
 
@@ -12,5 +13,5 @@ public class Login : ILogin
         _loginRepository = loginRepository;
     }
     
-    public ApiResponse<Domain.User> Execute(Domain.User input) => _loginRepository.Login(input);
+    public ApiResponse<MUser> Execute(MUser input) => _loginRepository.Login(input);
 }

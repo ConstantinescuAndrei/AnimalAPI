@@ -1,5 +1,6 @@
 using Business.ApiResponse;
 using Business.User.Repositories;
+using Domain;
 
 namespace Business.User.Register;
 
@@ -9,5 +10,5 @@ public class Register : IRegister
 
     public Register(IRegisterRepository registerRepository) => _registerRepository = registerRepository;
 
-    public ApiResponse<Domain.User> Execute(Domain.User input) => _registerRepository.Register(input);
+    public ApiResponse<MUser> Execute(MUser input) => _registerRepository.Register(input);
 }

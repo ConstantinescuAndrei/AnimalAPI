@@ -10,19 +10,21 @@ public class RegisterRepository : IRegisterRepository
 
     public RegisterRepository(Context context) => _context = context;
 
-    public ApiResponse<User> Register(User user)
+    public ApiResponse<MUser> Register(MUser MUser)
     {
-        var response = _context.Users.FirstOrDefault(u => u.Email == user.Email);
+        var response = _context.Users.FirstOrDefault(u => u.Email == MUser.Email);
 
         if (response != null)
         {
-            return ApiResponseFactory<User>.MakeFailedResponse("There is already an account created with this email");
+            return ApiResponseFactory<MUser>.MakeFailedResponse("There is already an account created with this email");
         }
 
-        _context.Users.Add(UserFactory.MakeEntity(user));
+        var entity = UserFactory.MakeEntity(MUser);
+        
+        _context.Users.Add(entity);
         _context.SaveChanges();
 
-        return ApiResponseFactory<User>.MakeSuccessResponse(user);
+        return ApiResponseFactory<MUser>.MakeSuccessResponse(UserFactory.MakeModel(entity));
     }
 
 }

@@ -10,16 +10,16 @@ public class LoginRepository : ILoginRepository
 
     public LoginRepository(Context context) => _context = context;
     
-    public ApiResponse<User> Login(User user)
+    public ApiResponse<MUser> Login(MUser MUser)
     {
         var response = _context.Users!
-            .FirstOrDefault(x => x.Email == user.Email && x.Password == user.Password);
+            .FirstOrDefault(x => x.Email == MUser.Email && x.Password == MUser.Password);
 
         if (response != null)
         {
-            return ApiResponseFactory<User>.MakeSuccessResponse(user);
+            return ApiResponseFactory<MUser>.MakeSuccessResponse(UserFactory.MakeModel(response));
         }
 
-        return ApiResponseFactory<User>.MakeFailedResponse("Email or password is incorrect.");
+        return ApiResponseFactory<MUser>.MakeFailedResponse("Email or password is incorrect.");
     }
 }
