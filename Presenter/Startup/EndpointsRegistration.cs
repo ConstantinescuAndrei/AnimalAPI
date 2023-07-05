@@ -1,5 +1,6 @@
 using Business.Animal.Create;
 using Business.Animal.Fetch;
+using Business.Comment.Fetch;
 using Business.User.Login;
 using Business.User.Register;
 using Domain;
@@ -17,5 +18,8 @@ public static class EndpointsRegistration
             endpoints.MapPost("/animals/create", (MAnimal animal, ICreate create) => create.Execute(animal));
             endpoints.MapGet("/animals", (IGetAll getAll) => getAll.Execute());
             endpoints.MapGet("/animals/{id}", (Guid id, IGetById getById) => getById.Execute(id));
+            endpoints.MapPost("/comments/create",
+                (MComment comment, Business.Comment.Create.ICreate create) => create.Execute(comment));
+            endpoints.MapGet("/comments/{imageId}", (Guid imageId, IGetComments getComments) => getComments.Execute(imageId));
         });
 }

@@ -14,7 +14,7 @@ public class AnimalRepository : IAnimalRepository
     {
         var entity = AnimalFactory.MakeEntity(animal);
         
-        _context.Animal.Add(AnimalFactory.MakeEntity(animal));
+        _context.Animals.Add(AnimalFactory.MakeEntity(animal));
         _context.SaveChanges();
 
         return ApiResponseFactory<MAnimal>.MakeSuccessResponse(AnimalFactory.MakeModel(entity));
@@ -22,7 +22,7 @@ public class AnimalRepository : IAnimalRepository
 
     public ApiResponse<List<MAnimal>> GetAll()
     {
-        var result = _context.Animal
+        var result = _context.Animals
             .ToList()
             .Select(AnimalFactory.MakeModel)
             .ToList();
@@ -32,7 +32,7 @@ public class AnimalRepository : IAnimalRepository
 
     public ApiResponse<List<MAnimal>> GetById(Guid id)
     {
-        var result = _context.Animal
+        var result = _context.Animals
             .Where(a => a.UserId == id)
             .ToList()
             .Select(AnimalFactory.MakeModel)

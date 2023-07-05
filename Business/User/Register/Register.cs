@@ -6,9 +6,9 @@ namespace Business.User.Register;
 
 public class Register : IRegister
 {
-    private readonly IRegisterRepository _registerRepository;
+    private readonly IUserRepository _userRepository;
 
-    public Register(IRegisterRepository registerRepository) => _registerRepository = registerRepository;
+    public Register(IUserRepository userRepository) => _userRepository = userRepository;
 
-    public ApiResponse<MUser> Execute(MUser input) => _registerRepository.Register(input);
+    public ApiResponse<MUser> Execute(MUser input) => _userRepository.Register(input);
 }
