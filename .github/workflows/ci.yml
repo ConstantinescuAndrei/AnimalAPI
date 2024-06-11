@@ -1,17 +1,55 @@
-name: CI
-
 on:
   pull_request:
     branches:
       - '**' # This pattern matches all branches
 
 jobs:
-  build:
+  setup-dotnet:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run echo command
-        run: echo "Hello, this is a test of the CI pipeline!"
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0.x' # Specify the .NET version you are using
+
+      - name: Cache .NET packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/*.fsproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+  build:
+    runs-on: ubuntu-latest
+    needs: setup-dotnet
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore --configuration Debug
+
+  test:
+    runs-on: ubuntu-latest
+    needs: [setup-dotnet, build]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Run tests
+        run: dotnet test --no-build --verbosity normal --configuration Debug
